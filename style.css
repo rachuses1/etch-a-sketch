@@ -2,8 +2,17 @@
     border: solid 1px black;
 }
 
-div {
-    width: 200px;
-    height: 200px;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 360px;
+    height: 360px;
+}
 
+.container div{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    
+    justify-content: center;
 }
