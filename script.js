@@ -1,6 +1,7 @@
 const container = document.querySelector('.container');
 const button = document.querySelector('button');
 let new_size;
+let new_grid;
 
 let initial_size = 16;
 addDiv(initial_size);
@@ -15,7 +16,7 @@ function addDiv(size) {
     };
 }; // create the grid
 
-const grid = document.querySelectorAll('div.grid');
+let grid = document.querySelectorAll('div.grid');
 
 grid.forEach((square) => {
     square.addEventListener("mouseover", color);
@@ -34,6 +35,8 @@ button.addEventListener("click", function findSize() {
     rid();
     addDiv(new_size);
     resize(new_size);
+    newColor();
+
 });
 
 function rid () {
@@ -45,6 +48,13 @@ function rid () {
 function resize (new_size) {
     container.style.width = new_size*22 + "px";
 }; // resize container
+
+function newColor () {
+    grid = document.querySelectorAll('div.grid');
+    grid.forEach((square) => {
+        square.addEventListener("mouseover", color);
+    });
+}
 
 
 
