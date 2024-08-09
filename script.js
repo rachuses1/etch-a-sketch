@@ -2,6 +2,9 @@ const container = document.querySelector('.container');
 const button = document.querySelector('button');
 let new_size;
 let new_grid;
+let RGB1;
+let RGB2;
+let RGB3;
 
 let initial_size = 16;
 addDiv(initial_size);
@@ -22,10 +25,20 @@ grid.forEach((square) => {
     square.addEventListener("mouseover", color);
 });
 
+console.log(Math.floor(Math.random() * 255));
+
+function generateRGB () {
+    RGB1 = Math.floor(Math.random() * 255);
+    RGB2 = Math.floor(Math.random() * 255);
+    RGB3 = Math.floor(Math.random() * 255);
+} 
+
+
 function color () {
     for(let i = 0; i < grid.length; i++) {
         grid[i].addEventListener("mouseover", function () {
-            grid[i].style.backgroundColor = "aquamarine";
+            generateRGB();
+            grid[i].style.backgroundColor = "rgb(" + RGB1 + "," + RGB2 + "," + RGB3 + ")";
         });
     };
 }
